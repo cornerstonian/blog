@@ -1,0 +1,10 @@
+<div class="">
+  <%=link_to 'New Post', new_post_path %>
+  <%= link_to 'Edit', edit_post_path(id: @post.id) %>
+  <%= link_to 'Delete', post_path(id: @post.id), method: :delete, data: {confirm: "Are you sure?"} %>
+</div>
+
+
+<h1><%= @post.name %></h1>
+
+<%= link_to "<< Back", :back %>

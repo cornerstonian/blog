@@ -1,2 +1,17 @@
-<h1>Home#index</h1>
+<h1>The Cornerstonian Blog </h1>
 <p>Find me in app/views/home/index.html.erb</p>
+
+
+
+
+
+
+<h1>Artists</h1>
+
+<%= link_to 'New Artist', new_artist_path %>
+
+<ul>
+  <% @artists.each do |artist| %>
+    <li><%= link_to artist.name, artist_path(id: artist.id)%></li>
+  <% end %>
+</ul>
