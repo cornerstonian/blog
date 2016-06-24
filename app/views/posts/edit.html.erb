@@ -8,18 +8,17 @@
   </div>
 <% end %>
 
-<%= form_tag post_path(id: @post.id), method: :patch do %>
+<%= form_for @post, method: :patch do |f| %>
   <div class="">
-    <%= label_tag :name %>
-    <%= text_field_tag :name, @post.name, class: "field", placeholder: 'New Post Name' %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: 'New Post Name' %>
   </div>
   <div class="">
-    <%= label_tag :body %>
-    <%= text_field_tag :body, @post.body, class: "field", placeholder: 'New Post Body' %>
+    <%= f.label :body %>
+    <%= f.text_field :body, placeholder: 'New Post Body' %>
   </div>
 
-
-  <%= submit_tag %>
+  <%= f.submit "Submit" %>
 <% end %>
 
 <%= link_to "<< Back", :back %>
