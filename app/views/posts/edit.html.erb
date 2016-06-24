@@ -1,0 +1,25 @@
+
+<h1>Editing: <%= @post.name %></h1>
+
+
+<% if @error_message %>
+  <div class="error">
+    <%= @error_message %>
+  </div>
+<% end %>
+
+<%= form_tag post_path(id: @post.id), method: :patch do %>
+  <div class="">
+    <%= label_tag :name %>
+    <%= text_field_tag :name, @post.name, class: "field", placeholder: 'New Post Name' %>
+  </div>
+  <div class="">
+    <%= label_tag :body %>
+    <%= text_field_tag :body, @post.body, class: "field", placeholder: 'New Post Body' %>
+  </div>
+
+
+  <%= submit_tag %>
+<% end %>
+
+<%= link_to "<< Back", :back %>

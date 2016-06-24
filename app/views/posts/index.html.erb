@@ -3,6 +3,7 @@
 
 <ul>
   <% @posts.each do |post| %>
-  <li><%= link_to post.name, posts_path(id: post.id) %></li>
+  <li><%= link_to post.name, post_path(id: post.id) %></li>
+  <h2><%= post.body %> </h2>
   <%end%>
 </ul>
